@@ -1,0 +1,11 @@
+@import "../_variables";
+@import '~breakpoint-sass/stylesheets/_breakpoint';
+
+
+.content-wrapper {
+  position: relative;
+  max-width: 1360px;
+  margin-left: auto;
+  margin-right: auto;
+  @include content-padding;
+}

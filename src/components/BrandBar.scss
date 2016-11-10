@@ -1,0 +1,29 @@
+@import '../_variables';
+@import '../_typography';
+
+.header__brand {
+  position: relative;
+  background: $magenta;
+  height: 84px;
+}
+.header__brand--logo {
+  padding-top: 24px;
+  cursor: pointer;
+}
+.header__brand--claim {
+  position: absolute;
+  display: inline-block;
+  width: 196px;
+  height: 18px;
+  right: 0;
+  @include content-padding(right);
+  top: 36px;
+  text-transform: uppercase;
+  color: white;
+  font-family: "Tele Grotesk Ultra";
+  font-size: 17px;
+
+
+
+}
+

@@ -1,0 +1,121 @@
+@import './_variables';
+@import './_fonts';
+@import '~breakpoint-sass/stylesheets/_breakpoint';
+
+@mixin copy {
+  font-family: "Tele Grotesk Screen";
+  @include fontSize( 22px );
+  font-weight: 400;
+  line-height: 1.545;
+}
+
+@mixin copyfooter {
+  font-family: "Tele Grotesk Fett";
+  @include fontSize( 22px );
+  font-weight: 400;
+  line-height: 1.545;
+}
+
+@mixin metafooter {
+  font-family: "Tele Grotesk Screen";
+  @include fontSize( 14px );
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+@mixin h1 {
+  font-family: "Tele Grotesk Ultra";
+  @include fontSize( 50px );
+  line-height: 1.08;
+  letter-spacing: 0.7px;
+}
+
+@mixin h2 {
+  font-family: "Tele Grotesk Halbfett";
+  @include fontSize( 30px );
+  line-height: 1;
+  letter-spacing: 0.7px;
+  margin-bottom: 0.68rem;
+}
+
+@mixin h2bold {
+  font-family: "Tele Grotesk Ultra";
+  @include fontSize( 30px );
+  line-height: 1;
+  letter-spacing: 0.7px;
+  margin-bottom: 0.68rem;
+}
+
+@mixin header-copy {
+  font-family: "Tele Grotesk Screen";
+  @include fontSize( 28px );
+  line-height: 1.214;
+  letter-spacing: 0.7px;
+}
+
+
+@mixin hero-display {
+  font-family: "Tele Grotesk Screen";
+  font-size: 28px;
+  line-height: 1;
+  color: #fff;
+  span { font-family: "Tele Grotesk Ultra"; }
+
+  @include breakpoint( $mob3 ) {
+    font-size: 32px;
+  }
+  @include breakpoint( $des1 ) {
+    font-size: 45px;
+  }
+}
+
+a { text-decoration: none; }
+a:link, a:visited {
+  color: $gray; 
+}
+a:hover, a:active {
+  color: $magenta;
+}
+
+
+.title--center {
+  @include h1;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.title__copy {
+  @include header-copy;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  @include breakpoint( $tab1 ) {
+    max-width: 70%;
+  }
+}
+
+
+
+
+/* buttons */
+.button {
+  display: inline-block;
+  height: rem(50px);
+  border-radius: 4.665599660110471px;
+  padding-left: rem(34px);
+  padding-right: rem(34px);
+  @include fontSize(22px);
+  line-height: rem(50px);
+  text-decoration: none;
+}
+.button-gray {
+  background-color: #ededed;
+  border: 1px solid #b2b2b2;
+  color: $gray;
+}
+.button-magenta {
+  background-color: $magenta;
+  border: 1px solid #cc0069;
+  color: #fff;
+}
+
+
