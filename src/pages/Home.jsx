@@ -33,14 +33,16 @@ const Home = ({ data } ) => (
       <div className="home__intro--keyfeatures">
         <div className="home__intro--keyfeature">
           <div className="keyfeature-imgwrapper">
-            <img src="/static/images/home-feature1-bequem.svg" alt="Einfach bequem" />
+            <img src="/static/images/home-feature1-bequem.svg" 
+              alt="Einfach bequem" />
           </div>
           <h2>{data.home.bullet1head}</h2>
           <p>{data.home.bullet2copy}</p>
         </div>
         <div className="home__intro--keyfeature">
           <div className="keyfeature-imgwrapper">
-            <img src="/static/images/home-feature2-flexibel.svg" alt="Einfach flexibel" />
+            <img src="/static/images/home-feature2-flexibel.svg" 
+              alt="Einfach flexibel" />
           </div>
           <h2>{data.home.bullet2head}</h2>
           <p>{data.home.bullet2copy}</p>

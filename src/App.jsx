@@ -1,4 +1,6 @@
 import React, { PropTypes } from 'react';
+import classNames from 'classnames';
+
 import BrandBar from 'components/BrandBar';
 import ContentWrapper from 'components/ContentWrapper';
 import NavBar from 'components/NavBar';
@@ -23,10 +25,12 @@ class App extends React.Component {
   constructor( props ) {
     super( props );
     this.state = {
+      menu: false,
       data: {},
       home: {},
       funktionen: {}
     }
+    this.toggleMenu = this.toggleMenu.bind(this);
   }
 
   init() {
@@ -40,7 +44,6 @@ class App extends React.Component {
       asArray: false,
       state: 'funktionen'
     });
-
   }
 
   componentWillUnmount(){
@@ -56,12 +59,19 @@ class App extends React.Component {
     this.init();
   }
 
+  toggleMenu( e ) {
+    this.setState({menu: !this.state.menu});
+  }
+
   render() {
+    const headerClasses = classNames({
+      'menu': this.state.menu
+    });
     return(
       <div className="viewport">
-        <header>
+        <header className={headerClasses}>
           <BrandBar />
-          <NavBar />
+          <NavBar toggleMenu={this.toggleMenu} />
         </header>
         <main>
           {this.props.children && React.cloneElement(this.props.children, {
