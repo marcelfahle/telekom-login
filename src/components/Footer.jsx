@@ -10,8 +10,8 @@ const Footer = () => (
       <ul>
         <li><Link to="/funktionen">Funktionen</Link></li>
         <li><Link to="/so-gehts">So geht's</Link></li>
-        <li><Link to="/login-mit-telekom">Login mit Telekom</Link></li>
-        <li><Link to="/telekom-login-fuer-ihre-website">Telekom Login für Ihre Website</Link></li>
+        {/*<li><Link to="/login-mit-telekom">Login mit Telekom</Link></li>*/}
+        {/*<li><Link to="/telekom-login-fuer-ihre-website">Telekom Login für Ihre Website</Link></li>*/}
       </ul>
     </nav>
 
@@ -21,22 +21,22 @@ const Footer = () => (
         <ul>
           <li>
             <a href="#">
-              FB 
+              <img src="/static/images/footer-fb.svg" alt="Facebook" />
             </a>
           </li>
           <li>
             <a href="#">
-              TW
+              <img src="/static/images/footer-twitter.svg" alt="Twitter" />
             </a>
           </li>
           <li>
             <a href="#">
-              g+ 
+              <img src="/static/images/footer-google.svg" alt="google plus" />
             </a>
           </li>
           <li>
             <a href="#">
-              a 
+              <img src="/static/images/footer-share.svg" alt="Share" />
             </a>
           </li>
         </ul>
@@ -47,11 +47,11 @@ const Footer = () => (
       <p className="footer__copyright">© 2016 Deutsche Telekom AG</p>
       <nav>
         <ul>
-          <li><a href="#">Geschäftskunden</a></li>
-          <li><a href="#">Telekom Hilft Community</a></li>
-          <li><a href="#">FAQ-Liste</a></li>
-          <li><a href="#">Impressum</a></li>
-          <li><a href="#">Datenschutz</a></li>
+          {/*<li><a href="#">Geschäftskunden</a></li>*/}
+          <li><a href="http://www.telekom.de/hilfe/vertrag-meine-daten/login-daten-passwoerter" target="_blank">Telekom Hilft Community</a></li>
+          {/*<li><a href="#">FAQ-Liste</a></li>*/}
+          <li><a href="http://www.telekom.com/impressum" target="_blank">Impressum</a></li>
+          <li><a href="http://www.telekom.de/datenschutz-ganz-einfach" target="_blank">Datenschutz</a></li>
         </ul>
       </nav>
     </div>

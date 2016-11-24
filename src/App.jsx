@@ -18,19 +18,22 @@ var base = Rebase.createClass({
 });
 
 
+var isSticky = false;
 
 
 class App extends React.Component {
-
   constructor( props ) {
     super( props );
     this.state = {
+      isHeaderSticky: false,
       menu: false,
       data: {},
       home: {},
-      funktionen: {}
+      funktionen: {},
+      sogehts: {}
     }
     this.toggleMenu = this.toggleMenu.bind(this);
+    this.setHeaderStickiness = this.setHeaderStickiness.bind( this );
   }
 
   init() {
@@ -43,6 +46,11 @@ class App extends React.Component {
       context: this,
       asArray: false,
       state: 'funktionen'
+    });
+    this.reffunktionen = base.syncState('sogehts', {
+      context: this,
+      asArray: false,
+      state: 'sogehts'
     });
   }
 
@@ -59,8 +67,31 @@ class App extends React.Component {
     this.init();
   }
 
+  componentDidMount() {
+    window.onscroll = () => {
+      if(window.pageYOffset > 80) {
+        this.setHeaderStickiness( true );
+      } else {
+        this.setHeaderStickiness( false );
+      }
+    }
+  }
+
   toggleMenu( e ) {
     this.setState({menu: !this.state.menu});
+  }
+
+  toggleAppMenu( e ) {
+    e.preventDefault();
+    console.log('app menu', e); 
+  }
+
+  setHeaderStickiness( sticky ) {
+    if (sticky !== isSticky) {
+      isSticky = sticky;
+      const wrap = document.getElementsByClassName('viewport')[0];
+      wrap.classList.toggle( 'sticky' );
+    }
   }
 
   render() {
@@ -71,7 +102,54 @@ class App extends React.Component {
       <div className="viewport">
         <header className={headerClasses}>
           <BrandBar />
-          <NavBar toggleMenu={this.toggleMenu} />
+          <NavBar toggleMenu={this.toggleMenu} toggleAppMenu={this.toggleAppMenu} />
+          
+          <div className="app-panel">
+            <ul className="app-panel__apps">
+              <li className="app-panel__app">
+                <a href="#">
+                  <img src="/static/images/icon-kundencenter.png" alt="Kundencenter"/>
+                  Kundencenter
+                </a>
+              </li>
+              <li className="app-panel__app">
+                <a href="#">
+                  <img src="/static/images/icon-kundencenter.png" alt="Kundencenter"/>
+                  Kundencenter
+                </a>
+              </li>
+              <li className="app-panel__app">
+                <a href="#">
+                  <img src="/static/images/icon-kundencenter.png" alt="Kundencenter"/>
+                  Kundencenter
+                </a>
+              </li>
+              <li className="app-panel__app">
+                <a href="#">
+                  <img src="/static/images/icon-kundencenter.png" alt="Kundencenter"/>
+                  Kundencenter
+                </a>
+              </li>
+              <li className="app-panel__app">
+                <a href="#">
+                  <img src="/static/images/icon-kundencenter.png" alt="Kundencenter"/>
+                  Kundencenter
+                </a>
+              </li>
+              <li className="app-panel__app">
+                <a href="#">
+                  <img src="/static/images/icon-kundencenter.png" alt="Kundencenter"/>
+                  Kundencenter
+                </a>
+              </li>
+            </ul>
+
+            <p className="app-panel__more-link">
+              <a href="/dienste-uebersicht">
+                Alle Dienste anzeigen
+              </a>
+            </p>
+          </div>
         </header>
         <main>
           {this.props.children && React.cloneElement(this.props.children, {

@@ -15,20 +15,22 @@ html {
     font-size: 16px;
   }
   @include breakpoint( $des4 ) {
-    font-size: 18px;
+    //font-size: 18px;
   }
   @include breakpoint( $des6 ) {
-    font-size: 20px;
+    //font-size: 20px;
   }
 }
 body {
   font-size: 1em;
-  font-family: 'Tele Grotesk Screen';
+  font-family: 'TeleGroteskScreen';
+  font-weight: 400;
 }
 main { font-size: 0; } // inline-block white-space hack
 h1, h2, h3, h4, p, li {
   color: $gray;
 }
+p, li { font-size: 1rem; }
 button { 
   background: none;
   border: 0;
@@ -46,7 +48,59 @@ button {
 
 
 
+.app-panel {
+  display: inline-block;
+  overfloW: hidden;
+  width: 296px;
+  //height: 272px;
+  position: absolute;
+  z-index: 1000;
+  top: 145px;
+  right: 10px;
+  background: #fff;
+  border: 1px solid #b2b2b2;
+  border-radius: 6px;
+}
 
+.app-panel__more-link {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  line-height: 43px;
+  text-align: center;
+  background: $border-color;
+
+  a {
+    font-weight: 700;
+    cursor: pointer; 
+  }
+}
+.app-panel__apps {
+  padding-top: 38px;
+  margin-bottom: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row wrap;
+  align-content: flex-end;
+
+}
+.app-panel__app {
+  width: 90px;
+  margin-bottom: 25px;
+  text-align: center;
+  a {
+    font-weight: 700;
+    cursor: pointer;
+  }
+  img {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    margin-bottom: 8px;
+  }
+}
 
 
 

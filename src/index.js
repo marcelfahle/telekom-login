@@ -6,6 +6,7 @@ import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 import App from './App';
 import Home from './pages/Home';
 import Funktionen from './pages/Funktionen';
+import SoGehts from './pages/SoGehts';
 
 import './index.html';
 
@@ -14,6 +15,7 @@ render(
     <Route path="/" component={App}>
       <IndexRoute component={ Home } />
       <Route path="/funktionen" component={Funktionen} />
+      <Route path="/so-gehts" component={ SoGehts } />
     
     </Route>
   </Router>

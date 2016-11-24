@@ -18,6 +18,16 @@ const Home = ({ data } ) => (
       WEIL EINFACH EINLOGGEN EINFACHER IST
     </Hero>
 
+
+
+    <ContentWrapper className="content-wrapper-full news">
+      <h2>Nutze die Vorteile von Telekom Login jetzt auch mit Spotify!</h2>
+      <p>Spotify ist ein digitaler Musikdienst, der dir Zugriff auf Millionen von Songs ermöglicht.</p>
+      <p>
+        <a className="button button-gray" href="#">Mehr Infos</a>
+      </p>
+    </ContentWrapper>
+
     <ContentWrapper className="home__intro">
       <p className="home__intro--login-button">
         <img src="/static/images/login-button-big.png" 
@@ -37,7 +47,7 @@ const Home = ({ data } ) => (
               alt="Einfach bequem" />
           </div>
           <h2>{data.home.bullet1head}</h2>
-          <p>{data.home.bullet2copy}</p>
+          <p>{data.home.bullet1copy}</p>
         </div>
         <div className="home__intro--keyfeature">
           <div className="keyfeature-imgwrapper">
@@ -84,14 +94,15 @@ const Home = ({ data } ) => (
 
     <Hero 
       img="hero-notyetregistered.jpg"
-      aspectClass="aspect16-7"
+      className="last-action-hero"
+      aspectClass="aspect16-7 last-hero"
       >
       <span>
         NOCH NICHT REGISTRIERT?<br/>
         IHRE ERSTEN SCHRITTE MIT DEM TELEKOM LOGIN
       </span>
       <p className="hero-cta">
-        <button className="button button-gray">So geht's !</button>
+        <Link to="/so-gehts" className="button button-gray">So geht's !</Link>
       </p>
     </Hero>
 

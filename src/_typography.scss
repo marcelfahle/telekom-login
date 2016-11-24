@@ -3,35 +3,37 @@
 @import '~breakpoint-sass/stylesheets/_breakpoint';
 
 @mixin copy {
-  font-family: "Tele Grotesk Screen";
-  @include fontSize( 22px );
+  font-family: "TeleGroteskScreen";
   font-weight: 400;
+  @include fontSize( 22px );
   line-height: 1.545;
 }
 
 @mixin copyfooter {
-  font-family: "Tele Grotesk Fett";
+  font-family: "TeleGroteskScreen";
+  font-weight: 600;
   @include fontSize( 22px );
-  font-weight: 400;
   line-height: 1.545;
 }
 
 @mixin metafooter {
-  font-family: "Tele Grotesk Screen";
-  @include fontSize( 14px );
+  font-family: "TeleGroteskScreen";
   font-weight: 400;
+  @include fontSize( 14px );
   line-height: 1.1;
 }
 
 @mixin h1 {
-  font-family: "Tele Grotesk Ultra";
+  font-family: "TeleGroteskScreen";
+  font-weight: 800;
   @include fontSize( 50px );
   line-height: 1.08;
   letter-spacing: 0.7px;
 }
 
 @mixin h2 {
-  font-family: "Tele Grotesk Halbfett";
+  font-family: "TeleGroteskScreen";
+  font-weight: 600;
   @include fontSize( 30px );
   line-height: 1;
   letter-spacing: 0.7px;
@@ -39,15 +41,26 @@
 }
 
 @mixin h2bold {
-  font-family: "Tele Grotesk Ultra";
+  font-family: "TeleGroteskScreen";
+  font-weight: 800;
   @include fontSize( 30px );
   line-height: 1;
   letter-spacing: 0.7px;
   margin-bottom: 0.68rem;
 }
 
+@mixin h3 {
+  color: $gray;
+  font-family: "TeleGroteskScreen";
+  font-weight: 800;
+  @include fontSize( 30px );
+  line-height: 1;
+  letter-spacing: 0.7px;
+}
+
 @mixin header-copy {
-  font-family: "Tele Grotesk Screen";
+  font-family: "TeleGroteskScreen";
+  font-weight: 400;
   @include fontSize( 28px );
   line-height: 1.214;
   letter-spacing: 0.7px;
@@ -55,11 +68,12 @@
 
 
 @mixin hero-display {
-  font-family: "Tele Grotesk Screen";
+  font-family: "TeleGroteskScreen";
+  font-weight: 400;
   font-size: 28px;
   line-height: 1;
   color: #fff;
-  span { font-family: "Tele Grotesk Ultra"; }
+  span { font-family: "TeleGroteskScreen"; font-weight: 800; }
 
   @include breakpoint( $mob3 ) {
     font-size: 32px;
@@ -68,6 +82,21 @@
     font-size: 45px;
   }
 }
+
+
+@mixin dl-header {
+  color: $gray;
+  font-family: "TeleGroteskScreen";
+  font-weight: 500;
+  @include fontSize( 30px );
+  line-height: 1.2em;
+}
+@mixin dl-copy {
+
+}
+
+
+
 
 a { text-decoration: none; }
 a:link, a:visited {
@@ -97,7 +126,7 @@ a:hover, a:active {
 
 
 /* buttons */
-.button {
+@mixin button {
   display: inline-block;
   height: rem(50px);
   border-radius: 4.665599660110471px;
@@ -106,16 +135,49 @@ a:hover, a:active {
   @include fontSize(22px);
   line-height: rem(50px);
   text-decoration: none;
+  color: $gray;
+  &:hover, &:active {
+    color: $gray;
+  }
 }
-.button-gray {
+
+@mixin button-gray {
   background-color: #ededed;
   border: 1px solid #b2b2b2;
   color: $gray;
+  &:hover, &:active {
+    color: $gray;
+  }
 }
-.button-magenta {
+
+@mixin button-magenta {
   background-color: $magenta;
   border: 1px solid #cc0069;
-  color: #fff;
+  color: #fff !important;
+}
+
+@mixin button-small {
+  height: rem(36px);
+  padding-left: rem(20px);
+  padding-right: rem(20px);
+  @include fontSize(18px);
+  line-height: rem(36px);
+}
+
+
+// leaving this in for backwardas compatibillity, as I used
+// classes before.
+.button {
+  @include button;
+}
+.button-gray {
+  @include button-gray;
+}
+.button-magenta {
+  @include button-magenta;
+}
+.button-small {
+  @include button-small;
 }
 
 

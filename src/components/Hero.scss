@@ -23,61 +23,68 @@
 }
 
 .hero__image--wrapper {
+  position: relative;
+  background-size: cover;
+  background-position: right top;
+  max-width: $maxVisualsWidth;
+  margin-left: auto;
+  margin-right: auto;
   // 16:5
   @include aspect-ratio(16, 10);
   @include breakpoint( $mob4 ) {
     @include aspect-ratio(16, 9);
   }
+  @include breakpoint( $tab1 ) {
+    background-position: center;
+  }
   @include breakpoint( $tab3 ) {
     @include aspect-ratio(16, 7);
   }
   &.aspect16-5plus {
-    @include breakpoint( $des4 ) {
+    @include breakpoint( $des3 ) {
       @include aspect-ratio(16, 5.5);
     }
   }
   &.aspect16-7 {
-    @include breakpoint( $des4 ) {
+    @include breakpoint( $des3 ) {
       @include aspect-ratio(16, 7);
     }
   }
   &.aspect16-5 {
-    @include breakpoint( $des4 ) {
+    @include breakpoint( $des3 ) {
       @include aspect-ratio(16, 5);
     }
   }
 }
 .hero__image {
-  display: block;
-  position: absolute;
-  //width: 100%;
-  height: 100%;
-  top: 0;
-  right: -10px;
+  //display: block;
+  ////position: absolute;
+  ////width: 100%;
+  //height: 100%;
+  //top: 0;
+  //right: -10px;
 
-  //height: 220px;
-  //margin-left: 50%;
-  //transform: translateX(-60%);
-  @include breakpoint( $paddingAt2 ) {
-    right: -20px;
-  }
-  @include breakpoint( $paddingAt3 ) {
-    left: -40%;
-    right: auto;
-  }
-  @include breakpoint( $tab3 ) {
-    left: auto;
-    right: -40px;
+  ////height: 220px;
+  ////margin-left: 50%;
+  ////transform: translateX(-60%);
+  //@include breakpoint( $paddingAt2 ) {
+  //  right: -20px;
+  //}
+  //@include breakpoint( $paddingAt3 ) {
+  //  left: -40%;
+  //  right: auto;
+  //}
+  //@include breakpoint( $tab3 ) {
+  //  left: -40px;
 
-  }
-  @include breakpoint( $paddingAt4 ) {
-    left: auto;
-    right: -40px;
-  }
-  @include breakpoint( $des4 ) {
-    width: calc(100% + 80px);
-    height: auto;
-  }
+  //}
+  //@include breakpoint( $paddingAt4 ) {
+  //  left: -40px;
+  //}
+  //@include breakpoint( $des3 ) {
+  //  width: calc(100% + 80px);
+  //  height: auto;
+  //}
 } 
 .content-wrapper__hero .hero__image--wrapper.aspect16-7 {
   @include breakpoint( $paddingAt3 ) {
@@ -91,7 +98,6 @@
     }
     @include breakpoint( $paddingAt4 ) {
       left: -40px;
-      right: auto;
     }
   }
 }
@@ -118,15 +124,16 @@
   @include breakpoint( $mob4 ) {
     //margin-left: -20px;
   }
-  @include breakpoint( $mob6 ) {
+  @include breakpoint( $tab1 ) {
     position: absolute;
     top: 0;
     margin-top: 5%;
     margin-left: auto;
     max-width: 540px;
+    width: auto;
+    margin-right: 120px;
   }
   @include breakpoint( $mob6 ) {
-    width: 40%;
   }
 
 
@@ -138,11 +145,12 @@
     z-index: -4;
     width: 100%;
     height: calc(100% + 20px);
-    top: 0;
+    top: -20px;
     left: 0;
     opacity: .5;
     background: $magenta;
-    @include breakpoint( $mob4 ) {
+    @include breakpoint( $tab1 ) {
+      top: 0;
       width: calc(100% + 30px);
     }
   }
@@ -172,5 +180,31 @@
 }
 .hero-cta {
   padding-top: rem(16px);
+}
+
+.last-action-hero {
+  padding-bottom: 0;
+}
+
+
+
+
+.hero__display--wrapper {
+  z-index: 10;
+  max-width: $maxContentWidth;
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  transform: translateX( -50% );
+  @include breakpoint( $tab1 ) {
+    position: absolute; 
+    width: calc(100% - 40px);
+    top: 0;
+
+  }
+  @include breakpoint( $tab5 ) {
+    width: calc(100% - 80px);
+    
+  }
 }
 

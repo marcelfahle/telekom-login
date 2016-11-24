@@ -110,4 +110,19 @@
 }
 
 
+.news {
+  text-align: center;
+  background: $blue3;
+  padding-top: 25px;
+  padding-bottom: 5px;
+  h2 {
+    @include h2bold;
+  }
+  p {
+    @include copy;
+    margin-bottom: 25px;
+  }
+}
+
+
 

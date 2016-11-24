@@ -6,18 +6,36 @@ import ContentWrapper from './ContentWrapper';
 import './Hero.scss';
 
 
-const Hero = ({ children, img, aspectClass = "aspect16-5" }) => (
-  <div className="hero">
-    <ContentWrapper className="content-wrapper__hero">
-      <div className={`hero__image--wrapper ${aspectClass}`}>
-        <img src={`/static/images/${img}`} className="hero__image" alt=""/>
-      </div>
-      <div className="hero__display">
-        {children}
-      </div>
-    </ContentWrapper>
-  </div>
+const Hero = ({ children, img, className = "", aspectClass = "aspect16-5" }) => {
+  
+  const styles = {
+    backgroundImage: "url('/static/images/" + img + "')"
+  }
 
-);
+  return(
+    <div className={`hero ${className}`}>
+
+
+      <div style={styles} className={`hero__image--wrapper ${aspectClass}`}>
+      </div>
+
+
+      <ContentWrapper className="hero__display--wrapper">
+        <div className="hero__display">
+          {children}
+        </div>
+      </ContentWrapper>
+
+
+
+
+
+
+
+
+    </div>
+  )
+
+};
 
 export default Hero;

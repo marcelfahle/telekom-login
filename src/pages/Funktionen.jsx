@@ -20,9 +20,11 @@ const Funktionen = ({data}) => (
     </ContentWrapper>
 
 
-    <ContentWrapper className="funktionen__functions-list">
+    <ContentWrapper 
+       style={{backgroundColor: data.funktionen.bullet1color}} 
+        className="content-wrapper-full funktionen__functions-list">
 
-      <div className="function align-left" style={{backgroundColor: data.funktionen.bullet1color}}>
+      <div className="content-wrapper function align-left" >
         <div className="function__img">
           <img src="/static/images/functions1-everywhere.jpg" width="557" alt="Alle Telekom Produkte jederzeit und überall" /> 
         </div>
@@ -31,9 +33,13 @@ const Funktionen = ({data}) => (
           <p>{data.funktionen.bullet1copy}</p>
         </div>
       </div>
+    </ContentWrapper>
 
 
-      <div className="function align-left" style={{backgroundColor: data.funktionen.bullet2color}}>
+    <ContentWrapper 
+        style={{backgroundColor: data.funktionen.bullet2color}} 
+        className="content-wrapper-full funktionen__functions-list">
+      <div className="content-wrapper function align-left">
         <div className="function__img">
           <img src="/static/images/functions2-pin.png" width="412" alt="Jugendschutz bei Entertain stärken: Mit der Benutzer-Pin" /> 
         </div>
@@ -55,7 +61,7 @@ const Funktionen = ({data}) => (
           Verwalten Sie Benutzerdaten, Freigaben und Funktionen zentral in den Einstellungen Ihres Telekom Logins.
         </p>
         <p>
-          <Link to="/" className="button button-gray">Login Einstellungen</Link>
+          <a href="https://accounts.login.idm.telekom.com/oauth2/auth?scope=openid&response_type=code&client_id=10LIVESAM30000004901PHOENIX0000000000000&redirect_uri=https%3A%2F%2Fwww.telekom.de%2Fstart&logout_uri=https%3A%2F%2Fwww.telekom.de%2Funterwegs%2Ftbslogoutservlet" className="button button-gray">Login Einstellungen</a>
         </p>
       </div>
     </ContentWrapper>

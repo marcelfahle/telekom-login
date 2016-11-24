@@ -1,6 +1,18 @@
 @import '../_variables';
 @import '../_typography';
 
+
+.viewport.sticky .header__brand {
+  //top: -80px;
+  top: -80px;
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+}
+.viewport.sticky {
+  margin-top: 84px;
+}
+
 .header__brand {
   position: relative;
   background: $magenta;
@@ -20,7 +32,8 @@
   top: 36px;
   text-transform: uppercase;
   color: white;
-  font-family: "Tele Grotesk Ultra";
+  font-family: "TeleGroteskScreen";
+  font-weight: 800;
   font-size: 17px;
 
 
