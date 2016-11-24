@@ -1,10 +1,13 @@
 import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
 import classNames from 'classnames';
 
 import BrandBar from 'components/BrandBar';
 import ContentWrapper from 'components/ContentWrapper';
 import NavBar from 'components/NavBar';
 import Footer from 'components/Footer';
+import AppPanel from 'components/AppPanel';
+
 import './App.scss';
 
 
@@ -27,12 +30,14 @@ class App extends React.Component {
     this.state = {
       isHeaderSticky: false,
       menu: false,
+      appPanel: false,
       data: {},
       home: {},
       funktionen: {},
       sogehts: {}
     }
     this.toggleMenu = this.toggleMenu.bind(this);
+    this.toggleAppMenu = this.toggleAppMenu.bind( this );
     this.setHeaderStickiness = this.setHeaderStickiness.bind( this );
   }
 
@@ -54,6 +59,7 @@ class App extends React.Component {
     });
   }
 
+
   componentWillUnmount(){
     base.removeBinding(this.ref);
   }
@@ -66,6 +72,8 @@ class App extends React.Component {
   componentWillMount () {
     this.init();
   }
+
+
 
   componentDidMount() {
     window.onscroll = () => {
@@ -83,7 +91,7 @@ class App extends React.Component {
 
   toggleAppMenu( e ) {
     e.preventDefault();
-    console.log('app menu', e); 
+    this.setState({appPanel: !this.state.appPanel});
   }
 
   setHeaderStickiness( sticky ) {
@@ -96,7 +104,8 @@ class App extends React.Component {
 
   render() {
     const headerClasses = classNames({
-      'menu': this.state.menu
+      'menu': this.state.menu,
+      'show-app-panel': this.state.appPanel
     });
     return(
       <div className="viewport">
@@ -104,52 +113,7 @@ class App extends React.Component {
           <BrandBar />
           <NavBar toggleMenu={this.toggleMenu} toggleAppMenu={this.toggleAppMenu} />
           
-          <div className="app-panel">
-            <ul className="app-panel__apps">
-              <li className="app-panel__app">
-                <a href="#">
-                  <img src="/static/images/icon-kundencenter.png" alt="Kundencenter"/>
-                  Kundencenter
-                </a>
-              </li>
-              <li className="app-panel__app">
-                <a href="#">
-                  <img src="/static/images/icon-kundencenter.png" alt="Kundencenter"/>
-                  Kundencenter
-                </a>
-              </li>
-              <li className="app-panel__app">
-                <a href="#">
-                  <img src="/static/images/icon-kundencenter.png" alt="Kundencenter"/>
-                  Kundencenter
-                </a>
-              </li>
-              <li className="app-panel__app">
-                <a href="#">
-                  <img src="/static/images/icon-kundencenter.png" alt="Kundencenter"/>
-                  Kundencenter
-                </a>
-              </li>
-              <li className="app-panel__app">
-                <a href="#">
-                  <img src="/static/images/icon-kundencenter.png" alt="Kundencenter"/>
-                  Kundencenter
-                </a>
-              </li>
-              <li className="app-panel__app">
-                <a href="#">
-                  <img src="/static/images/icon-kundencenter.png" alt="Kundencenter"/>
-                  Kundencenter
-                </a>
-              </li>
-            </ul>
-
-            <p className="app-panel__more-link">
-              <a href="/dienste-uebersicht">
-                Alle Dienste anzeigen
-              </a>
-            </p>
-          </div>
+          <AppPanel />
         </header>
         <main>
           {this.props.children && React.cloneElement(this.props.children, {

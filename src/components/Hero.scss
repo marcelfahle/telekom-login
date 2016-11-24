@@ -9,7 +9,7 @@
   overflow: hidden;
 
   // shows the semi transparent box in full-width mode
-  padding-bottom: 20px;
+  //padding-bottom: 20px;
   @include breakpoint( $mob6 ) {
     padding-bottom: 0;
   }

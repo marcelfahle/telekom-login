@@ -115,6 +115,7 @@
   background: $blue3;
   padding-top: 25px;
   padding-bottom: 5px;
+  @include content-padding;
   h2 {
     @include h2bold;
   }

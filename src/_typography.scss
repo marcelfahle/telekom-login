@@ -30,6 +30,14 @@
   line-height: 1.08;
   letter-spacing: 0.7px;
 }
+@mixin h1-underlined {
+  color: $gray;
+  font-family: "TeleGroteskScreen";
+  font-weight: 700;
+  @include fontSize( 19px );
+  line-height: 1.08;
+  letter-spacing: 0.7px;
+}
 
 @mixin h2 {
   font-family: "TeleGroteskScreen";
@@ -95,6 +103,15 @@
 
 }
 
+@mixin list-copy {
+  color: $gray;
+  font-family: "TeleGroteskScreen";
+  font-weight: 500;
+  @include fontSize( 19px );
+  line-height: 1.2em;
+
+}
+
 
 
 
@@ -111,6 +128,14 @@ a:hover, a:active {
   @include h1;
   text-align: center;
   margin-bottom: 20px;
+}
+.title--underlined {
+  @include h1-underlined;
+  border-bottom: 1px solid $border-color2;
+  text-align: left;
+  padding-top: rem(56px);
+  padding-bottom: rem(13px);
+  margin-bottom: rem(36px);
 }
 .title__copy {
   @include header-copy;

@@ -125,12 +125,14 @@ header.menu .header__main-menu {
   position: absolute;
   right: 0;
   top: 0;
+  @include content-padding(right);
   height: 72px;
   .button-login {
     width: 28px;
     height: 28px;
     position: relative;
     padding: 0;
+    top: -1px;
     text-align: center;
     line-height: 34px;
     @include breakpoint( $mob4 ) {
@@ -179,7 +181,7 @@ header.menu .header__main-menu {
       color: $gray;
     }
     &:last-child {
-      margin-right: 10px;
+      margin-right: 0px;
       position: relative;
       vertical-align: top;
       //@include fontSize(18px);

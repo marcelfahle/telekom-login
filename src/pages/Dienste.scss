@@ -1,0 +1,9 @@
+@import "../_variables";
+@import "../_typography";
+
+
+.dienste {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-end;
+}
